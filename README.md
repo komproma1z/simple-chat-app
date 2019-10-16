@@ -4,6 +4,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 
+<<<<<<< HEAD
 ### `npm run server` 
 
 then 
@@ -11,10 +12,6 @@ then
 ### `npm start` 
 
 To start up the app
-
-
-
-
 
 ### `npm test`
 
