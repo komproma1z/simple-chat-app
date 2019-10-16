@@ -4,7 +4,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 
-### `npm start` + ### `node src/server/index.js` 
+### `npm start` + `node src/server/index.js` 
 To start up the app
 
 ### `npm test`
