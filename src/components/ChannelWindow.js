@@ -3,6 +3,7 @@ import React, { PureComponent } from 'react';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import List from '@material-ui/core/List';
+import Divider from '@material-ui/core/Divider';
 
 import { styled } from "styletron-react";
 
@@ -16,9 +17,12 @@ class ChannelWindow extends PureComponent {
                 <List>
                     {
                         channelsNames.map(channel => (
+                            <>
                             <ListItem onClick={this.props.onChangeRoom} key={channel} button>
                                 <ListItemText primary={this.props.capitaliseFirstLetter(channel)} />
-                            </ListItem>))
+                            </ListItem>
+                            <Divider />
+                            </>))
                     }
                 </List>
             </Root>
@@ -27,9 +31,8 @@ class ChannelWindow extends PureComponent {
 }
 
 const Root = styled('div', {
-    width: '15%',
+    width: '20%',
     height: '250px',
-    borderRight: '1px solid grey',
 });
 
 export default ChannelWindow;

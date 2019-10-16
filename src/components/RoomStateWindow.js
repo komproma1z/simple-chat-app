@@ -10,7 +10,7 @@ class RoomStateWindow extends PureComponent {
             <Root>
                 <Typography><strong>Here are: </strong></Typography>
                 <ul>
-                    {this.props.users.filter(user => user.room === this.props.currentRoom).map(user => (<LItem>{user.name}</LItem>))}
+                    {this.props.users.filter(user => user.room === this.props.currentRoom).map(user => (<LItem key={user.name}>{user.name}</LItem>))}
                 </ul>
             </Root>
         );

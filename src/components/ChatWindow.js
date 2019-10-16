@@ -1,5 +1,4 @@
 import React, { PureComponent } from 'react';
-import ReactDOM from 'react-dom';
 
 import Typography from '@material-ui/core/Typography';
 import Chip from '@material-ui/core/Chip';
@@ -28,8 +27,8 @@ class ChatWindow extends PureComponent {
                 {
                     this.props.channels[this.props.currentRoom].map((chat, i) => (
                         <Flex key={i}>
-                            <Chip label={`${chat.time}, ${chat.from}: `}/>
-                            <Typography variant="body1">{chat.msg}</Typography>
+                            <SmallChip label={`${chat.time}, ${chat.from}:` } size="small"/>
+                            <Typography variant="body1" gutterBottom>{chat.msg}</Typography>
                         </Flex>
                     ))
                 }
@@ -39,7 +38,7 @@ class ChatWindow extends PureComponent {
 }
 
 const Root = styled('div', {
-    width: '85%',
+    width: '80%',
     height: '250px',
     padding: '20px',
     overflow: 'overlay',
@@ -48,6 +47,10 @@ const Root = styled('div', {
 const Flex = styled('div', {
     display: 'flex',
     alignItems: 'center',
+});
+
+const SmallChip = styled(Chip, {
+    margin: '0 5px 5px 0',
 });
 
 export default ChatWindow;
