@@ -87,20 +87,23 @@ class Chat extends PureComponent {
     }
      
     render() {
+
+        const { currentRoom, textValue } = this.state;
+
         return (
             <>
             <Root>
-                <Titles capitaliseFirstLetter={capitaliseFirstLetter} currentRoom={this.state.currentRoom}/>
+                <Titles capitaliseFirstLetter={capitaliseFirstLetter} currentRoom={currentRoom}/>
                 <Flex>
                     <ChannelWindow 
                         channels={this.props.channels} 
                         onChangeRoom={this.onChangeRoom}
                         capitaliseFirstLetter={capitaliseFirstLetter}
                     />
-                    <ChatWindow channels={this.props.channels} currentRoom={this.state.currentRoom} />
+                    <ChatWindow channels={this.props.channels} currentRoom={currentRoom} />
                 </Flex>
                 <Input 
-                    textValue={this.state.textValue} 
+                    textValue={textValue} 
                     onInputChange={this.onInputChange} 
                     onSendButtonClick={this.onSendButtonClick}
                 />

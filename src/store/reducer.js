@@ -1,11 +1,13 @@
 import { SEND_MESSAGE } from './actions';
 import { CHANGE_CHANNEL } from './actions';
 import { UPDATE_MEMBERS } from './actions';
+import { UPDATE_USERS } from './actions';
 
 
 const initialState = {
     channels: {general: [], languages: [], frameworks: [], databases: []},
     users: [],
+    allUsers: [],
 };
 
 export const chatReducer = (state=initialState, action) => {
@@ -17,7 +19,9 @@ export const chatReducer = (state=initialState, action) => {
             return {...state, currentRoom: action.payload.room};
         case UPDATE_MEMBERS:
             return {...state, users: action.payload.members};
+        case UPDATE_USERS:
+            return {...state, allUsers: action.payload.users};
         default:
             return state;
     }
-} 
+}

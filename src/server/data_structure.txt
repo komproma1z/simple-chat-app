@@ -1,0 +1,23 @@
+state {
+    channel: [
+        name: text (in fact capitalised key - Object.keys(channels)[i]),
+        messages: [
+            ...
+        ]
+    ],
+    ...
+}
+
+message {
+    time: currentTime,
+    from: user,
+    msg: text,
+    channel: currentChannel,
+}
+
+users [
+    {
+        user: name,
+        room: currentRoom,
+    }
+]

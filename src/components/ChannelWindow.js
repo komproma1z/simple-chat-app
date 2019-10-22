@@ -16,13 +16,13 @@ class ChannelWindow extends PureComponent {
             <Root>
                 <List>
                     {
-                        channelsNames.map(channel => (
-                            <>
-                            <ListItem onClick={this.props.onChangeRoom} key={channel} button>
-                                <ListItemText primary={this.props.capitaliseFirstLetter(channel)} />
-                            </ListItem>
-                            <Divider />
-                            </>))
+                        channelsNames.map((channel, i) => (
+                            <React.Fragment key={i}>
+                                <ListItem onClick={this.props.onChangeRoom} key={channel} button>
+                                    <ListItemText primary={this.props.capitaliseFirstLetter(channel)} />
+                                </ListItem>
+                                <Divider />
+                            </React.Fragment>))
                     }
                 </List>
             </Root>
